@@ -1,0 +1,70 @@
+﻿ID,Fullname,Forname ,Surname,Postcode,Employer ,Tele,Frd_mkr
+S01,Patrick Corbyn,Patrick,Corbyn,MK4 3AE,"Ziemann, Tremblay and Harber",+44 3069 990248,Non-Fraud
+S02,Jaquelyn Smith,Jaquelyn,Smith,SO24 9JH,"Graham, Schroeder and Brakus",+44 3069 990335,Non-Fraud
+S03,Shad Jones,Shad,Jones,N16 5HT,Klein-O'Conner,+44 3069 990247,Fraud
+S04,Eliana Williams,Eliana,Williams,SK8 1JA,Bednar-Kassulke,+44 3069 990247,Fraud
+S05,Christa Brown,Christa,Brown,HP1 1NT,Nicolas-Schiller,+44 3069 990941,Non-Fraud
+S06,Serita Taylor,Serita,Taylor,NE28 8SU,Yundt-Wolf,+44 3069 990338,Non-Fraud
+S07,Glinda Davies,Glinda,Davies,ME10 4HE,D'Amore-Walter,+44 3069 990377,Non-Fraud
+S08,Alecia Wilson,Alecia,Wilson,CF14 2FU,"Abshire, Gislason and Wunsch",+44 3069 990351,Non-Fraud
+S09,Nickolas Evans,Nickolas,Evans,DL8 3JB,"Davis, Simonis and Hansen",+44 3069 990792,Non-Fraud
+S10,Tamra Thomas,Tamra,Thomas,SE3 7AF,"Borer, Kemmer and Moore",+44 3069 990891,Non-Fraud
+S11,Stephine Johnson,Stephine,Johnson,SE13 6RQ,Runolfsson Group,+44 3069 990919,Non-Fraud
+S12,Jordon Roberts,Jordon,Roberts,SW2 2BH,Ullrich PLC,+44 3069 990109,Fraud
+S13,Austin Walker,Austin,Walker,BR1 3NR,Rutherford and Sons,+44 3069 990685,Non-Fraud
+S14,Lindsay Wright,Lindsay,Wright,UB2 5QE,"Sawayn, Tillman and Balistreri",+44 3069 990351,Non-Fraud
+S15,Melvina Thompson,Melvina,Thompson,AB45 3UT,"Johnston, Bartell and Romaguera",+44 3069 990454,Non-Fraud
+S16,Hyon Robinson,Hyon,Robinson,NG19 0AT,Simonis-Heathcote,+44 3069 990954,Non-Fraud
+S17,Marta White,Marta,White,CO1 9RF,Lehner-Tremblay,+44 3069 990082,Non-Fraud
+S18,Jaclyn Hughes,Jaclyn,Hughes,N16 5HT,Lemke-Doyle,+44 3069 990500,Non-Fraud
+S19,Reiko Edwards,Reiko,Edwards,NE5 1JX,"Heaney, Nader and Hamill",+44 3069 990685,Non-Fraud
+S20,Brigette Hall,Brigette,Hall,CO1 9RF,Torp Group,+44 3069 990954,Non-Fraud
+S21,Winston Green,Winston,Green,N16 5HT,Cruickshank-Gislason,+44 3069 990454,Non-Fraud
+S22,Lyndsay Martin,Lyndsay,Martin,E5 8JT,Gerhold-Haley,+44 3069 990954,Non-Fraud
+S23,Nikita Wood,Nikita,Wood,E9 5EG,"Stokes, Funk and Sauer",+44 3069 990082,Non-Fraud
+S24,Fannie Lewis,Fannie,Lewis,SE3 7AF,Botsford Group,+44 3069 990500,Non-Fraud
+S25,Kelsie Harris,Kelsie,Harris,SE13 6RQ,"Hegmann, Littel and McDermott",+44 3069 990525,Non-Fraud
+S26,Sima Clarke,Sima,Clarke,SW2 2BH,Tillman Inc,+44 3069 990837,Non-Fraud
+S27,Merrilee Jackson,Merrilee,Jackson,SW17 0TA,Wolf Inc,+44 3069 990984,Non-Fraud
+S28,Stanley Clark,Stanley,Clark,N19 3FB,"Towne, Bosco and Koepp",+44 3069 990873,Fraud
+S29,Marlen Clark,Marlen,Clark,N19 3FB,Wolff-Greenholt,+44 3069 990830,Fraud
+S30,Kelvin Scott,Kelvin,Scott,N11 3DR,Wolff-Greenholt,+44 7700 900593,Non-Fraud
+S31,Dudley Turner,Dudley,Turner,PO19 3JN,Feeney LLC,+44 7700 900872,Non-Fraud
+S32,Lannie Moore,Lannie,Moore,HP17 0TJ,Walker-Mitchell,+44 7700 900636,Non-Fraud
+S33,Harland Cooper,Harland,Cooper,TW18 1ND,Thompson-Pagac,+44 7700 900649,Non-Fraud
+S34,Petra Ward,Petra,Ward,N11 3DR,Murphy-Barrows,+44 7700 900479,Non-Fraud
+S35,Ginny Morris,Ginny,Morris,PO19 3JN,Hill-Windler,+44 7700 900151,Non-Fraud
+S36,Henrietta King,Henrietta,King,M27 0DY,Pfannerstill Ltd,+44 3069 990872,Non-Fraud
+S37,Willia Watson,Willia,Watson,BT43 6LJ,Kunze-McDermott,+44 3069 990633,Non-Fraud
+S38,Reba Harrison,Reba,Harrison,CM17 9EU,"Hills, Grimes and Dach",+44 3069 990351,Non-Fraud
+S39,Shona Morgan,Shona,Morgan,TS18 5NE,Turner-Doyle,+44 3069 990780,Non-Fraud
+S40,Delicia Baker,Delicia,Baker,RH11 0PB,Kshlerin and Sons,+44 3069 990078,Non-Fraud
+S41,Lemuel Young,Lemuel,Young,WF8 3JN,"Smith, Smith and Bode",+44 3069 990212,Fraud
+S42,Toney Patel,Toney,Patel,NE4 7RT,"Jones, Reichert and Langosh",+44 3069 990844,Non-Fraud
+S43,Sanda Allen,Sanda,Allen,N1 2QG,Stokes PLC,+44 3069 990756,Non-Fraud
+S44,Crysta Anderson,Crysta,Anderson,PR1 5AF,Harber-Lang,+44 3069 990271,Non-Fraud
+S45,Brendon Mitchell,Brendon,Mitchell,SG1 3RB,"Lakin, Purdy and Hane",+44 3069 990842,Non-Fraud
+S46,Stephan Phillips,Stephan,Phillips,GL6 8LE,Reinger PLC,+44 3069 990241,Non-Fraud
+S47,Collette James,Collette,James,BT74 5PQ,Corkery-Gusikowski,+44 3069 990389,Non-Fraud
+S48,Shawanna Campbell,Shawanna,Campbell,ME2 2DN,Wilkinson and Sons,+44 3069 990155,Non-Fraud
+S49,Elvera Bell,Elvera,Bell,HD5 8SW,Kozey LLC,+44 8081 570451,Non-Fraud
+S50,Elli Lee,Elli,Lee,SA62 3LW,"Ziemann, Tremblay and Harber",+44 3069 990389,Non-Fraud
+S51,Guillermo Corbyn,Guillermo,Corbyn,NE5 1JX,"Graham, Schroeder and Brakus",+44 8081 570082,Non-Fraud
+S52,Graig Smith,Graig,Smith,CO1 9RF,Klein-O'Conner,+44 8081 570955,Non-Fraud
+S53,Aldo Jones,Aldo,Jones,N16 5HT,Bednar-Kassulke,+44 3069 990247,Fraud
+S54,Thomas Williams,Thomas,Williams,E5 8JT,Nicolas-Schiller,+44 8081 570455,Non-Fraud
+S55,Zane Brown,Zane,Brown,E9 5EG,Nicolas-Schiller,+44 8081 570056,Non-Fraud
+S56,Franklin Williams,Franklin,Williams,SE3 7AF,Yundt-Wolf,+44 3069 990271,Non-Fraud
+S57,Jim Brown,Jim,Brown,SE13 6RQ,D'Amore-Walter,+44 909 879 0203,Non-Fraud
+S58,Antwan Taylor,Antwan,Taylor,N1 2QG,"Abshire, Gislason and Wunsch",+44 909 879 0085,Non-Fraud
+S59,Dillon Davies,Dillon,Davies,PR1 5AF,"Davis, Simonis and Hansen",+44 909 879 0794,Non-Fraud
+S60,Lupe Wilson,Lupe,Wilson,SG1 3RB,Cosco,+44 8081 570955,Fraud
+S61,Lemuel Thompson,Lemuel,Thompson,GL6 8LE,"Davis, Simonis and Hansen",+44 909 879 0330,Non-Fraud
+S62,Darius Robinson,Darius,Robinson,BT74 5PQ,Cosco ,+44 8081 570190,Fraud
+S63,Derek White,Derek,White,ME2 2DN,"Hegmann, Littel and McDermott",+44 8081 570292,Non-Fraud
+S64,Karl Hughes,Karl,Hughes,HD5 8SW,Tillman Inc,+44 3069 990500,Non-Fraud
+S65,Tyrell Edwards,Tyrell,Edwards,SA62 3LW,Wolf Inc,+44 909 879 0904,Non-Fraud
+S66,Hyon Baker,Hyon,Baker,SK8 1JA,"Towne, Bosco and Koepp",+44 909 879 0793,Non-Fraud
+S67,Marta Young,Marta,Young,HP1 1NT,Hill-Windler,+44 3069 990212,Fraud
+S68,Jaclyn Patel,Jaclyn,Patel,NE28 8SU,Wolff-Greenholt,+44 3069 990844,Non-Fraud
+S69,Reiko Allen,Reiko,Allen,ME10 4HE,Bednar-Kassulke,+44 8081 570282,Non-Fraud
