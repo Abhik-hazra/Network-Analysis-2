@@ -68,3 +68,26 @@ visNetwork(list, edge) %>%
 
 
 
+eigen_centrality(net2, directed = FALSE, weights = test$weight)
+# Community representation 
+fc <- fastgreedy.community(net2)
+V(net2)$community <- fc$membership
+
+list1 <- data.frame(id = V(net2)$name, title = V(net2)$name, group = V(net2)$community)
+list1 <- list1[order(list1$id, decreasing = F),]
+edges <- get.data.frame(net2, what="edges")[1:2]
+
+visNetwork(list1, edges) %>%
+  visOptions(highlightNearest = TRUE, nodesIdSelection = TRUE)
+
+net.sym <- as.undirected(net2, mode= "collapse", edge.attr.comb=list(weight="sum", "ignore"))
+
+cliques(net.sym) # list of cliques
+sapply(cliques(net.sym), length) # clique sizes 
+largest_cliques(net.sym) # cliques with max number of nodes
+
+ceb <- cluster_edge_betweenness(net2); dendPlot(ceb, mode="hclust")
+plot(ceb, net2)
+length(ceb)
+membership(ceb)
+
