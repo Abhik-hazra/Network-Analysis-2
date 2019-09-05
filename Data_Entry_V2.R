@@ -1,0 +1,115 @@
+
+
+
+library(shiny)
+library(shinyjs)
+## shinysky is to customize buttons
+library(shinysky)
+library(DT)
+library(data.table)
+library(lubridate)
+library(shinyalert)
+library(visNetwork)
+library(networkD3)
+library(dplyr)
+library(igraph)
+library(gtools)
+
+shiny_data <- read.csv(file="/Users/abhik/Desktop/MyData.csv", header=T, as.is=T,stringsAsFactors = FALSE)
+
+
+useShinyalert()
+
+
+ui <- fluidPage(
+  # Application title
+  
+  titlePanel("Customer Base"),
+  ### This is to adjust the width of pop up "showmodal()" for DT modify table 
+
+  tags$head(tags$style(HTML('
+                            .modal-lg {
+                            width: 1200px;
+                            }
+                            '))),
+  helpText("Note: Remember to save any updates!"),
+  br(),
+  ### tags$head() is to customize the download button
+  tags$head(tags$style(".butt{background-color:#230682;} .butt{color: #e6ebef;}")),
+  downloadButton("Trich_csv", "Download in CSV", class="butt"),
+  useShinyalert(), # Set up shinyalert
+  uiOutput("MainBody_trich"),actionButton(inputId = "Updated_trich",label = "Save")
+  
+  
+)
+
+
+
+server <- function(input, output) {
+  ### interactive dataset
+  shiny_data <- read.csv(file="/Users/abhik/Desktop/MyData.csv", header=T, as.is=T,stringsAsFactors = FALSE)
+  shiny_data <- shiny_data[,2:3]
+  vals_trich<-reactiveValues()
+  vals_trich$Data<-shiny_data
+  
+  #### MainBody_trich is the id of DT table
+  output$MainBody_trich<-renderUI({
+    fluidPage(
+      hr(),
+      column(6,offset = 6,
+             HTML('<div class="btn-group" role="group" aria-label="Basic example" style = "padding:10px">'),
+             ### tags$head() This is to change the color of "Add a new row" button
+             tags$head(tags$style(".butt2{background-color:#231651;} .butt2{color: #e6ebef;}")),
+             div(style="display:inline-block;width:30%;text-align: center;",actionButton(inputId = "Add_row_head",label = "Add", class="butt2") ),
+             HTML('</div>') ),
+      
+      column(12,dataTableOutput("Main_table_trich")),
+      tags$script("$(document).on('click', '#Main_table_trich button', function () {
+                   Shiny.onInputChange('lastClickId',this.id);
+                   Shiny.onInputChange('lastClick', Math.random()) });")
+      
+      
+      
+    ) 
+  })
+  
+  #### render DataTable part ####
+  output$Main_table_trich<-renderDataTable({
+    DT=vals_trich$Data
+    datatable(DT,selection = 'single',
+              escape=F) })
+  
+  
+  observeEvent(input$Add_row_head, {
+    ### This is the pop up board for input a new row
+    showModal(modalDialog(title = "Add a new row",
+                        #  dateInput(paste0("Date_add", input$Add_row_head), "Date:", value = Sys.Date()),
+                          textInput(paste0("Forname_add", input$Add_row_head), "Forname"),
+                          textInput(paste0("Surname_add", input$Add_row_head), "Surname"),
+                          actionButton("go", "Add item"),
+                          easyClose = TRUE, footer = NULL ))
+    
+  })
+  ### Add a new row to DT  
+  observeEvent(input$go, {
+    new_row=data.frame(
+       Forname=input[[paste0("Forname_add", input$Add_row_head)]],
+       Surname=input[[paste0("Surname_add", input$Add_row_head)]]
+    )
+    vals_trich$Data<-rbind(vals_trich$Data,new_row )
+    removeModal()
+  })
+  
+  ### save to RDS part 
+  observeEvent(input$Updated_trich,{
+    write.csv(vals_trich$Data, file = "/Users/abhik/Desktop/MyData.csv")
+    shinyalert(title = "Saved!", type = "success")
+  })
+
+  
+  
+  
+}
+
+
+shinyApp(ui = ui, server = server)
