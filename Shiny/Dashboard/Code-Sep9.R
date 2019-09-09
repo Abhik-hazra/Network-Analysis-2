@@ -1,4 +1,5 @@
 
+
 library(visNetwork)
 library(networkD3)
 library(dplyr)
@@ -26,10 +27,7 @@ sidebar <- dashboardSidebar(
   sidebarMenu(
     menuItem("Network Linkages", tabName = "dashboard", icon = icon("project-diagram")),
     menuItem("Community Detection", icon = icon("users"), tabName = "community", badgeColor = "green" ),
-    menuItem("Charts", icon = icon("bar-chart-o"),
-             menuSubItem("Chart sub-item 1", tabName = "subitem1"),
-             menuSubItem("Chart sub-item 2", tabName = "subitem2")
-    ),
+
     menuItem("New Customer", icon = icon("user-check"), tabName = "customer_entry", badgeColor = "green" ),
     menuItem("References", icon = icon("book"),
              href = "https://github.com/rstudio/shinydashboard/blob/gh-pages/_apps/sidebar/app.R"
@@ -59,24 +57,11 @@ body <- dashboardBody(
               ),
               
               box(
-                title = "Histogram control", width = 12, solidHeader = TRUE, #status = "primary",
-                sliderInput("count", "Count", min = 1, max = 500, value = 120)
-              ),
-              box(
-                title = "Appearance",
-                width = 4, solidHeader = TRUE,
-                radioButtons("fill", "Fill", # inline = TRUE,
-                             c(None = "none", Blue = "blue", Black = "black", red = "red")
-                )
-              ),
-              box(
-                title = "Scatterplot control",
-                width = 4, solidHeader = TRUE, status = "warning",
-                selectInput("spread", "Spread",
-                            choices = c("0%" = 0, "20%" = 20, "40%" = 40, "60%" = 60, "80%" = 80, "100%" = 100),
-                            selected = "60"
-                )
+                title = "Number of Links", width = 6, solidHeader = TRUE, status = "primary",
+                textOutput("no_of_link")
               )
+             
+ 
             ),
             
             # Solid backgrounds
@@ -116,11 +101,7 @@ body <- dashboardBody(
                 )
               )
               
-              
-            
-            
-            
-            
+             
             ), 
     tabItem("customer_entry", 
             fluidRow(
@@ -341,6 +322,53 @@ server <- function(input, output) {
       visLegend() 
     
   })
+  # **********************************************************************************************************************************************************
+  output$no_of_link <- renderText({
+    
+    list <- read.csv(file="/Users/abhik/Desktop/Nodelist1.csv", header=T, as.is=T,stringsAsFactors = FALSE)
+    list<- list %>% rename(id = ID , label = Fullname, group= Frd_mkr)
+    
+    # Creating the edge list common by Telephone Numbers 
+    a1 <- full_join(list,list, by="Tele")
+    a1 <- a1 %>% select(id.x, id.y) %>% filter (id.x != id.y & id.x > id.y) %>%
+      rename(from = id.x, to=id.y) %>% mutate(weight=10.0, Link_by="Telephone")
+    count_tele=nrow(unique(a1[,c("from", "to")]))
+    
+    # Creating the edge list commmon by Postcode
+    b1 <- full_join(list,list, by="Postcode")
+    b1 <- b1 %>% select(id.x, id.y) %>% filter (id.x != id.y & id.x > id.y) %>%
+      rename(from = id.x, to=id.y)  %>% mutate(weight=1.0, Link_by="Postcode")
+    count_post=nrow(unique(b1[,c("from", "to")]))
+    
+    # Creating the edge list commmon by Surname
+    
+    c1 <- full_join(list,list, by="Surname")
+    
+    c1 <- c1 %>% select(id.x, id.y) %>% filter (id.x != id.y & id.x > id.y) %>%
+      rename(from = id.x, to=id.y)  %>% mutate(weight=1.0, Link_by="Surname")
+    count_srnm=nrow(unique(c1[,c("from", "to")]))
+    # Creating the edge list commmon by Employer
+    
+    d1 <- full_join(list,list, by="Employer")
+    
+    d1 <- d1 %>% select(id.x, id.y) %>% filter (id.x != id.y & id.x > id.y) %>%
+      rename(from = id.x, to=id.y)  %>% mutate(weight=2.0, Link_by="Employer")
+    count_emp=nrow(unique(d1[,c("from", "to")]))
+    
+    data_sh <- rbind (a1,b1,c1,d1)
+    
+    data_sh1 <-subset(data_sh, Link_by %in% input$links)
+    data_sh2 <- count(data_sh1) %>% rename (`Total links` =n)
+    tot_links=nrow(data_sh1[,c("from", "to")])
+    unique_links=nrow(unique(data_sh1[,c("from", "to")]))
+    
+    paste("The number of Links: ", tot_links, "  and  ", "The number of unique Links: ",unique_links)
+    
+  }
+  
+  )
+  
+  
   
   # **********************************************************************************************************************************************************
   # ************** Inserting the Community Buildin this section **********************************************************************************************
@@ -467,5 +495,8 @@ server <- function(input, output) {
 }
 
 shinyApp(ui, server)
+
+
+
 
 
