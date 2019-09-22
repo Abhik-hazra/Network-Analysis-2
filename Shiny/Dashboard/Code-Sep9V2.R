@@ -13,6 +13,7 @@ library(DT)
 library(data.table)
 library(lubridate)
 library(shinyalert)
+library(shinydashboard)
 
 useShinyalert()
 skin <- Sys.getenv("DASHBOARD_SKIN")
